@@ -262,7 +262,7 @@ dtoverlay=vc4-fkms-v3d
 ![Touchscreen](../../assets/images/manual/vz235_printed/electronics/Firmware/Touchscreen/TouchscreenEdit.PNG)
 
 
-You're screen should now be fully working.
+You're screen should now be fully working. 🥳
 
 
 [Touch not working - KlipperScreen]: https://klipperscreen.readthedocs.io/en/latest/Troubleshooting/Touch_issues/
