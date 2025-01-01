@@ -244,17 +244,17 @@ Press the number corresponding to Klipperscreen (in this case, 7) and then hit e
 Please note that this installation may take some time.
 ![klipperscreen](../../assets/images/manual/vz235_printed/electronics/Firmware/Touchscreen/KLIPPERSCREEN.PNG)
 
-If you're touchscreen isn't working SSH into your Pi and run:
+
+{: .info }
+> If you're touchscreen isn't working SSH into your Pi and run:
 ```bash
 sudo nano /boot/config.txt
 ```
 ![Touchscreen](../../assets/images/manual/vz235_printed/electronics/Firmware/Touchscreen/Touchscreen.PNG)
-
 Then scroll down and change the highlited line From: 
 ```bash
 dtoverlay=vc4-kms-v3d
 ```
-
 To: 
 ```bash
 dtoverlay=vc4-fkms-v3d
