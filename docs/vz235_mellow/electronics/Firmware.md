@@ -118,7 +118,6 @@ Use both with a 128KiB bootloader Offset. And a 25MHz Crystal Like this:
 ### Set pin states
 
 For CPAP we need to change the on/off settings of pin PF8 so we have to put that into the GPIO settings. Press spacebar on GPIO pins and put in !PF8 and press enter.
-
 ![PF8](../../assets/images/manual/vz235_printed/electronics/Firmware/PF8.PNG)
 
 ### Compiling firmware
@@ -260,7 +259,7 @@ To:
 ```bash
 dtoverlay=vc4-fkms-v3d
 ```
-![Touchscreen](../../assets/images/manual/vz235_printed/electronics/Firmware/Touchscreen/KLIPPERSCREEN.PNGTouchscreenEdit.PNG)
+![Touchscreen](../../assets/images/manual/vz235_printed/electronics/Firmware/Touchscreen/TouchscreenEdit.PNG)
 
 
 You're screen should now be fully working.
