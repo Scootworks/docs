@@ -67,7 +67,6 @@ Next up you'll be greeted with the Login screen. The username is default: pi and
 First we're gonna be updating the Pi with some commands. You'll be asked to enter your password sometimes and that's the same as we used to login so: raspberry.
 
 Enter these 2 commands in the order shown bellow and wait for everything to finish.
-
 ```bash
 sudo apt-get update
 ```
@@ -79,7 +78,6 @@ sudo apt-get upgrade
 ### Configure firmware
 
 Now that we have a updated Pi it's time to set up the firmware for our Motherboard.
-
 ```bash
 cd ~/klipper/
 ```
@@ -96,35 +94,30 @@ First off we're gonna press the space bar on Enable Extra low-Level configuratio
 
 You can navigate the screen with the arrow keys on your keyboard and Spacebar selects the option.
 
-You'll see something like this now.
-
+You'll see something like this now:
 ![low level](../../assets/images/manual/vz235_printed/electronics/Firmware/extra_low_level.PNG)
 
 ### Motherboard model
 
 Go down to Micro-controller Architecture and press the spacebar. you'll see a list of options for selecting the correct architecture. We're gonna be using the STM32. Press space to select it.
-
 ![stm32](../../assets/images/manual/vz235_printed/electronics/Firmware/STM32.PNG)
 
 Now go down to Processor Model and press space there. We're gonna be selecting the correct MCU we have on our Motherboard.
 
 For the Mellow Super 8 V1.3 we need the STM32F407.
 
-And we next Select the Bootloader offset to be 32KiB Bootloader like this.
-
+And we next Select the Bootloader offset to be 32KiB Bootloader like this:
 ![F407](../../assets/images/manual/vz235_printed/electronics/Firmware/F407Setup.PNG)
 
 For the Mellow Super 8 Pro we need to use the STM32H723 or the STM32H743 Check wich one you have by reading it on the Chip of the Motherboard.
 
-Use both with a 128KiB bootloader Offset. And a 25MHz Crystal Like this.
-
+Use both with a 128KiB bootloader Offset. And a 25MHz Crystal Like this:
 ![H723](../../assets/images/manual/vz235_printed/electronics/Firmware/H723.PNG)
 ![H743](../../assets/images/manual/vz235_printed/electronics/Firmware/H743.PNG)
 
 ### Set pin states
 
 For CPAP we need to change the on/off settings of pin PF8 so we have to put that into the GPIO settings. Press spacebar on GPIO pins and put in !PF8 and press enter.
-
 ![PF8](../../assets/images/manual/vz235_printed/electronics/Firmware/PF8.PNG)
 
 ### Compiling firmware
@@ -173,8 +166,7 @@ The file should now be named FLY.CUR meaning the board successfully flashed.
 
 Now we're gonna make sure the Motherboard can talk to the Pi. Put back the SDCard and power up the printer.
 
-Once it's all powered on open Putty Login and type in this command.
-
+Once it's all powered on open Putty Login and type in this command:
 ```bash
 ls /dev/serial/by-id/*
 ```
@@ -200,7 +192,6 @@ sudo systemctl enable klipper-mcu.service
 ```
 
 Next we select the correct MCU for the Pi.
-
 ```bash
 cd ~/klipper/
 ```
@@ -212,7 +203,6 @@ make menuconfig
 In the menu, set "Microcontroller Architecture" to "Linux process," then save and exit.
 
 To build and install the new micro-controller code, run:
-
 ```bash
 sudo service klipper stop
 ```
@@ -226,7 +216,6 @@ sudo service klipper start
 ```
 
 If klippy.log reports a "Permission denied" error when attempting to connect to /tmp/klipper_host_mcu then you need to add your user to the tty group. The following command will add the "pi" user to the tty group:
-
 ```bash
 sudo usermod -a -G tty pi
 ```
@@ -248,20 +237,18 @@ cd ~ && git clone https://github.com/dw-0/kiauh.git
 ./kiauh/kiauh.sh
 ```
 
-Then Press 1 for install and hit enter
+Then press the number corresponding to Install (in this case, 1) and hit enter:
+![kiauh](../../assets/images/manual/vz235_printed/electronics/Firmware/Touchscreen/KIAUH.PNG)
 
-![kiauh](../../assets/images/manual/vz235_printed/electronics/Firmware/KIAUH.PNG)
+Press the number corresponding to Klipperscreen (in this case, 7) and then hit enter.
+Please note that this installation may take some time.
+![klipperscreen](../../assets/images/manual/vz235_printed/electronics/Firmware/Touchscreen/KLIPPERSCREEN.PNG)
 
-Press 5 for Klipperscreen and hit enter. This might take a while to install.
-
-![klipperscreen](../../assets/images/manual/vz235_printed/electronics/Firmware/klipperscreen.PNG)
-
-If you're touchscreen isn't working SSH into your Pi with Putty and run:
-
+If you're touchscreen isn't working SSH into your Pi and run:
 ```bash
 sudo nano /boot/config.txt
 ```
-![Touchscreen](../../assets/images/manual/vz235_printed/electronics/Firmware/Touchscreen.PNG)
+![Touchscreen](../../assets/images/manual/vz235_printed/electronics/Firmware/Touchscreen/Touchscreen.PNG)
 
 Then scroll down and change the highlited line From: 
 ```bash
@@ -269,13 +256,13 @@ dtoverlay=vc4-kms-v3d
 ```
 
 To: 
-
 ```bash
 dtoverlay=vc4-fkms-v3d
 ```
-![Touchscreen](../../assets/images/manual/vz235_printed/electronics/Firmware/TouchscreenEdit.PNG)
+![Touchscreen](../../assets/images/manual/vz235_printed/electronics/Firmware/Touchscreen/TouchscreenEdit.PNG)
 
-You're screen should now be fully working.
+
+You're screen should now be fully working. 🥳
 
 
 [Touch not working - KlipperScreen]: https://klipperscreen.readthedocs.io/en/latest/Troubleshooting/Touch_issues/
