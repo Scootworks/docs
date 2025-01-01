@@ -248,20 +248,18 @@ cd ~ && git clone https://github.com/dw-0/kiauh.git
 ./kiauh/kiauh.sh
 ```
 
-Then Press 1 for install and hit enter
+Then Press 1 for install and hit enter:
+![kiauh](../../assets/images/manual/vz235_printed/electronics/Firmware/Touchscreen/KIAUH.PNG)
 
-![kiauh](../../assets/images/manual/vz235_printed/electronics/Firmware/KIAUH.PNG)
-
-Press 5 for Klipperscreen and hit enter. This might take a while to install.
-
-![klipperscreen](../../assets/images/manual/vz235_printed/electronics/Firmware/klipperscreen.PNG)
+Press the corresponding number (in this case number 7) for Klipperscreen and hit enter. This might take a while to install.
+![klipperscreen](../../assets/images/manual/vz235_printed/electronics/Firmware/Touchscreen/KLIPPERSCREEN.PNG)
 
 If you're touchscreen isn't working SSH into your Pi with Putty and run:
 
 ```bash
 sudo nano /boot/config.txt
 ```
-![Touchscreen](../../assets/images/manual/vz235_printed/electronics/Firmware/Touchscreen.PNG)
+![Touchscreen](../../assets/images/manual/vz235_printed/electronics/Firmware/Touchscreen/Touchscreen.PNG)
 
 Then scroll down and change the highlited line From: 
 ```bash
@@ -269,11 +267,11 @@ dtoverlay=vc4-kms-v3d
 ```
 
 To: 
-
 ```bash
 dtoverlay=vc4-fkms-v3d
 ```
-![Touchscreen](../../assets/images/manual/vz235_printed/electronics/Firmware/TouchscreenEdit.PNG)
+![Touchscreen](../../assets/images/manual/vz235_printed/electronics/Firmware/Touchscreen/KLIPPERSCREEN.PNGTouchscreenEdit.PNG)
+
 
 You're screen should now be fully working.
 
